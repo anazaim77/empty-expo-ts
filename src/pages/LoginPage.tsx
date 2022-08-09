@@ -1,18 +1,37 @@
 import { RootStackScreenProps } from "@/config/navigator/types";
-import * as React from "react";
-import { Text, View, StyleSheet, Button, SafeAreaView } from "react-native";
+import { useAuthStore } from "@/config/state";
+import React, { useEffect } from "react";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Button,
+  SafeAreaView,
+  TextInput,
+} from "react-native";
 
 interface LoginPageProps {}
 
 const LoginPage: React.FC<
   RootStackScreenProps<"Authentication"> & LoginPageProps
 > = (props) => {
+  const { authToken, isLoggedIn, doLogin } = useAuthStore();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      props.navigation.replace("Root");
+    }
+  }, [isLoggedIn]);
+
   return (
     <SafeAreaView style={styles.container}>
       <Text>LoginPage</Text>
+      <Text>Ini Token : {authToken}</Text>
       <Button
-        title={"Go to main page"}
-        onPress={() => props.navigation.navigate("Root")}
+        title={"Coba Login"}
+        onPress={() => {
+          doLogin("iniCeritanyaToken");
+        }}
       />
     </SafeAreaView>
   );
