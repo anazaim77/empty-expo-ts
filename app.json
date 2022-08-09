@@ -18,14 +18,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "id.fajartrigo.empty-expo-ts"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "id.ts-expo-empty.fajartrigo"
+      "package": "id.ts_expo_empty.fajartrigo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
