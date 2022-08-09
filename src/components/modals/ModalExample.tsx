@@ -1,4 +1,4 @@
-import { AppUtils } from "@/utils";
+import { StyleUtils } from "@/utils";
 import React, { useState } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 import Modal from "react-native-modal";
@@ -16,8 +16,8 @@ export const ModalExample = (props: ModalExampleProps) => {
       <Button title="Buka Modal" onPress={_handleOpen} />
       <Modal
         isVisible={isModalVisible}
-        deviceWidth={AppUtils.deviceWidth}
-        deviceHeight={AppUtils.deviceHeight}
+        deviceWidth={StyleUtils.deviceWidth}
+        deviceHeight={StyleUtils.deviceHeight}
       >
         <View style={{ flex: 1, justifyContent: "center" }}>
           <View

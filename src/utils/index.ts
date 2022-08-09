@@ -1,1 +1,1 @@
-export * as AppUtils from "./app";
+export * as StyleUtils from "./StyleUtils";
