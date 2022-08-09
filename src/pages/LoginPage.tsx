@@ -1,5 +1,6 @@
 import { RootStackScreenProps } from "@/config/navigator/types";
 import { useAuthStore } from "@/config/state";
+import { StorageUtils } from "@/utils";
 import React, { useEffect } from "react";
 import {
   Text,
@@ -16,6 +17,7 @@ const LoginPage: React.FC<
   RootStackScreenProps<"Authentication"> & LoginPageProps
 > = (props) => {
   const { authToken, isLoggedIn, doLogin } = useAuthStore();
+  const auth_token_mmkv = StorageUtils.getString("AUTH_TOKEN");
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -26,7 +28,9 @@ const LoginPage: React.FC<
   return (
     <SafeAreaView style={styles.container}>
       <Text>LoginPage</Text>
-      <Text>Ini Token : {authToken}</Text>
+      <Text>
+        Ini Token : {authToken} {auth_token_mmkv}
+      </Text>
       <Button
         title={"Coba Login"}
         onPress={() => {
