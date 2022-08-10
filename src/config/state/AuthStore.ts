@@ -1,7 +1,6 @@
 import create from "zustand";
 import { persist } from "zustand/middleware";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { StorageUtils } from "@/utils";
 
 type AuthProps = {
   authToken: string | undefined;
@@ -18,16 +17,8 @@ const authStore = create<AuthProps>(
       isLoggedIn: false,
 
       //actions
-      doLogin: (authToken) => {
-        StorageUtils.setValue("AUTH_TOKEN", "adaPanjangdehPokoknya");
-
-        set({ isLoggedIn: true, authToken });
-      },
-      doLogout: () => {
-        StorageUtils.setValue("AUTH_TOKEN", "KOSONG");
-
-        set({ isLoggedIn: false, authToken: undefined });
-      },
+      doLogin: (authToken) => set({ isLoggedIn: true, authToken }),
+      doLogout: () => set({ isLoggedIn: false, authToken: undefined }),
     }),
     {
       name: "auth-store",
