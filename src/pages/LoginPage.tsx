@@ -1,5 +1,7 @@
 import { RootStackScreenProps } from "@/config/navigator/types";
+import { AxiosClient } from "@/config/services";
 import { useAuthStore } from "@/config/state";
+import { ApiEndpoint } from "@/constants";
 import { StorageUtils } from "@/utils";
 import React, { useEffect } from "react";
 import {
@@ -35,6 +37,9 @@ const LoginPage: React.FC<
         title={"Coba Login"}
         onPress={() => {
           doLogin("iniCeritanyaToken");
+          AxiosClient.get(ApiEndpoint.POSTS).then((result) => {
+            console.log("result " + ApiEndpoint.POSTS, result);
+          });
         }}
       />
     </SafeAreaView>

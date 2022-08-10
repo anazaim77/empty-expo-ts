@@ -13,8 +13,8 @@ export const setValue = (
   storage.set(key, value);
 };
 
-export const getString = (key: keyof IStorageKeys) => {
-  return storage.getString(key);
+export const getString = (key: keyof IStorageKeys): string => {
+  return storage.getString(key) as string;
 };
 
 export const getNumber = (key: keyof IStorageKeys) => {
