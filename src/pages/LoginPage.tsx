@@ -1,9 +1,14 @@
 import { RootStackScreenProps } from "@/config/navigator/types";
-import { AxiosClient } from "@/config/services";
 import { useAuthStore } from "@/config/state";
-import { ApiEndpoint } from "@/constants";
+import { QueryHooks } from "@/hooks";
 import React, { useEffect } from "react";
-import { Button, SafeAreaView, StyleSheet, Text } from "react-native";
+import {
+  Button,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+} from "react-native";
 
 interface LoginPageProps {}
 
@@ -11,6 +16,8 @@ const LoginPage: React.FC<
   RootStackScreenProps<"Authentication"> & LoginPageProps
 > = (props) => {
   const { authToken, isLoggedIn, doLogin } = useAuthStore();
+  const { data: postData } = QueryHooks.useGetPosts();
+  const postMutate = QueryHooks.useSendPosts();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -20,17 +27,24 @@ const LoginPage: React.FC<
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>LoginPage</Text>
-      <Text>Ini Token : {authToken}</Text>
-      <Button
-        title={"Coba Login"}
-        onPress={() => {
-          doLogin("iniCeritanyaToken");
-          AxiosClient.get(ApiEndpoint.POSTS).then(() => {
-            // console.log("result " + ApiEndpoint.POSTS, result);
-          });
-        }}
-      />
+      <ScrollView>
+        <Text>LoginPage</Text>
+        <Text>Ini Token : {authToken}</Text>
+        <Button
+          title={"Coba Login"}
+          onPress={() => {
+            // doLogin("iniCeritanyaToken");
+            postMutate.mutate({
+              title: "Judulnya",
+              body: "Isinya",
+              userId: 12123,
+            });
+          }}
+        />
+        {postData?.map((item, index) => (
+          <Text key={`post_${index}`}>{item.title}</Text>
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 };
