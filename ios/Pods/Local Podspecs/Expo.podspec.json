@@ -1,6 +1,6 @@
 {
   "name": "Expo",
-  "version": "46.0.3",
+  "version": "45.0.8",
   "summary": "The Expo SDK",
   "description": "The Expo SDK",
   "license": "MIT",
@@ -19,5 +19,5 @@
 
     ]
   },
-  "source_files": "ios/**/*.{h,m,swift}"
+  "source_files": "**/*.{h,m,swift}"
 }
