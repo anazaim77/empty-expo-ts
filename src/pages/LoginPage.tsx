@@ -3,14 +3,7 @@ import { AxiosClient } from "@/config/services";
 import { useAuthStore } from "@/config/state";
 import { ApiEndpoint } from "@/constants";
 import React, { useEffect } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  Button,
-  SafeAreaView,
-  TextInput,
-} from "react-native";
+import { Button, SafeAreaView, StyleSheet, Text } from "react-native";
 
 interface LoginPageProps {}
 
@@ -33,8 +26,8 @@ const LoginPage: React.FC<
         title={"Coba Login"}
         onPress={() => {
           doLogin("iniCeritanyaToken");
-          AxiosClient.get(ApiEndpoint.POSTS).then((result) => {
-            console.log("result " + ApiEndpoint.POSTS, result);
+          AxiosClient.get(ApiEndpoint.POSTS).then(() => {
+            // console.log("result " + ApiEndpoint.POSTS, result);
           });
         }}
       />
