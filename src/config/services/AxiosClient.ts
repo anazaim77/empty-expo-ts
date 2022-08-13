@@ -15,9 +15,9 @@ const axiosClient = axios.create({
 });
 
 axiosClient.interceptors.request.use(
-  (config: InterceptorRequestAxiosRequestConfig) => {
+  async (config: InterceptorRequestAxiosRequestConfig) => {
     config.headers = {
-      Authorization: StorageUtils.getString("AUTH_TOKEN"),
+      Authorization: await StorageUtils.getString("AUTH_TOKEN"),
     };
     return config;
   },
@@ -28,9 +28,11 @@ axiosClient.interceptors.request.use(
 
 axiosClient.interceptors.response.use(
   (response) => {
+    // console.log("[Axios] response.success", response);
     return response;
   },
   (error) => {
+    // console.log("[Axios] response.error", error);
     if (error.response.status === 401) {
       // unauthorized
     } else if (error.response.status === 500) {

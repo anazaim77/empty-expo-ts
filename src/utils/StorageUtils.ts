@@ -27,7 +27,7 @@ export const setItem = async (
 
 export const getString = async (key: string) => {
   try {
-    return await AsyncStorage.getItem(key);
+    return (await AsyncStorage.getItem(key)) as string;
   } catch (error) {
     throw new Error("[Local Storage] An error occurred while getting data");
   }
