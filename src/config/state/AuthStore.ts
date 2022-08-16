@@ -1,6 +1,7 @@
 import create from "zustand";
 import { persist } from "zustand/middleware";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+// import zustandFlipper from "react-native-flipper-zustand";
 
 type AuthProps = {
   authToken: string | undefined;
@@ -10,6 +11,7 @@ type AuthProps = {
 };
 
 const authStore = create<AuthProps>(
+  // zustandFlipper(
   persist(
     (set, get): AuthProps => ({
       // states
@@ -25,6 +27,7 @@ const authStore = create<AuthProps>(
       getStorage: () => AsyncStorage,
     }
   )
+  // )
 );
 
 export default authStore;
