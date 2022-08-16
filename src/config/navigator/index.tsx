@@ -9,10 +9,18 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { QueryClientProvider } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { reactQueryClient } from "../services/QueryClient";
 import { RootStackParamList, RootTabParamList } from "./types";
+import { addPlugin } from "react-query-native-devtools";
 
 export default function Navigation() {
+  useEffect(() => {
+    if (__DEV__) {
+      addPlugin({ queryClient: reactQueryClient });
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={reactQueryClient}>
       <NavigationContainer>
