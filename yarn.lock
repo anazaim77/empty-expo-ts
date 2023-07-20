@@ -2069,6 +2069,13 @@
     find-up "^5.0.0"
     js-yaml "^4.1.0"
 
+"@flip.id/mobile-design-system@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@flip.id/mobile-design-system/-/mobile-design-system-1.1.0.tgz#e036630d645b5b4534e23ab805e9e1b3b9e6585f"
+  integrity sha512-gkNJyQkI/ureggGZ9x1v6qamlAnHTwvGYhy4iorA4Ct7PRM90fJ6DSEHsh3NlWIj/GpyguCJyZGTec/q6Bflkw==
+  dependencies:
+    lodash.debounce "^4.0.8"
+
 "@gar/promisify@^1.0.1":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"

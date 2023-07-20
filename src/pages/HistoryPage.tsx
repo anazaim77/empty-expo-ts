@@ -1,12 +1,17 @@
+import { Button, Text } from "@flip.id/mobile-design-system";
 import * as React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 interface HistoryPageProps {}
 
 const HistoryPage = (props: HistoryPageProps) => {
   return (
     <View style={styles.container}>
-      <Text>HistoryPage</Text>
+      <Text fontWeight="black">ProximaNova-Black</Text>
+      <Text fontWeight="black" fontStyle="italic">
+        ProximaNova-BlackIt
+      </Text>
+      <Button onPress={() => {}}> asik</Button>
     </View>
   );
 };
