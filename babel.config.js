@@ -18,6 +18,7 @@ module.exports = function (api) {
           rootPathPrefix: "@/",
         },
       ],
+      "@babel/plugin-proposal-export-namespace-from",
     ],
   };
 };

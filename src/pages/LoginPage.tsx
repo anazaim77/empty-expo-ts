@@ -2,13 +2,8 @@ import { RootStackScreenProps } from "@/config/navigator/types";
 import { useAuthStore } from "@/config/state";
 import { QueryHooks } from "@/hooks";
 import React, { useEffect } from "react";
-import {
-  Button,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-} from "react-native";
+import { Button, ScrollView, StyleSheet, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface LoginPageProps {}
 
@@ -33,12 +28,18 @@ const LoginPage: React.FC<
         <Button
           title={"Coba Login"}
           onPress={() => {
-            // doLogin("iniCeritanyaToken");
-            postMutate.mutate({
-              title: "Judulnya",
-              body: "Isinya",
-              userId: 12123,
-            });
+            postMutate.mutate(
+              {
+                title: "Judulnya",
+                body: "Isinya",
+                userId: 12123,
+              },
+              {
+                onSuccess: () => {
+                  doLogin("iniCeritanyaToken");
+                },
+              }
+            );
           }}
         />
         {postData?.map((item, index) => (
