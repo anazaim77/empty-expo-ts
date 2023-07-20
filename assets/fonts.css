@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "ProximaNova-Black";
+  src: url("./fonts/ProximaNova-Black.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-BlackIt";
+  src: url("./fonts/ProximaNova-BlackIt.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-Bold";
+  src: url("./fonts/ProximaNova-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-BoldIt";
+  src: url("./fonts/ProximaNova-BoldIt.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-Extrabld";
+  src: url("./fonts/ProximaNova-Extrabld.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-ExtrabldIt";
+  src: url("./fonts/ProximaNova-ExtrabldIt.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-Light";
+  src: url("./fonts/ProximaNova-Light.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-LightIt";
+  src: url("./fonts/ProximaNova-LightIt.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-Medium";
+  src: url("./fonts/ProximaNova-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-MediumIt";
+  src: url("./fonts/ProximaNova-MediumIt.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-Regular";
+  src: url("./fonts/ProximaNova-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-RegularIt";
+  src: url("./fonts/ProximaNova-RegularIt.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-Semibold";
+  src: url("./fonts/ProximaNova-Semibold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-SemiboldIt";
+  src: url("./fonts/ProximaNova-SemiboldIt.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-Thin";
+  src: url("./fonts/ProximaNova-Thin.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ProximaNova-ThinIt";
+  src: url("./fonts/ProximaNova-ThinIt.otf") format("truetype");
+}
