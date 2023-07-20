@@ -33,12 +33,18 @@ const LoginPage: React.FC<
         <Button
           title={"Coba Login"}
           onPress={() => {
-            // doLogin("iniCeritanyaToken");
-            postMutate.mutate({
-              title: "Judulnya",
-              body: "Isinya",
-              userId: 12123,
-            });
+            postMutate.mutate(
+              {
+                title: "Judulnya",
+                body: "Isinya",
+                userId: 12123,
+              },
+              {
+                onSuccess: () => {
+                  doLogin("iniCeritanyaToken");
+                },
+              }
+            );
           }}
         />
         {postData?.map((item, index) => (
