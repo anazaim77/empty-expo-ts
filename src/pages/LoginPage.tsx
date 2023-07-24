@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import { Button, ScrollView, StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import { Button as FButton } from "@flip.id/mobile-design-system";
 interface LoginPageProps {}
 
 const LoginPage: React.FC<
@@ -42,6 +43,13 @@ const LoginPage: React.FC<
             );
           }}
         />
+        <FButton
+          onPress={function () {
+            props.navigation.navigate("ShowMDS");
+          }}
+        >
+          Preview MDS Scene
+        </FButton>
         {postData?.map((item, index) => (
           <Text key={`post_${index}`}>{item.title}</Text>
         ))}

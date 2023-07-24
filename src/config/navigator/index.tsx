@@ -4,6 +4,7 @@ import {
   LoginPage,
   NotFoundPage,
   ProfilePage,
+  ShowOffMDSPage,
 } from "@/pages";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
@@ -48,6 +49,11 @@ function RootNavigator() {
       <Stack.Screen
         name="NotFound"
         component={NotFoundPage}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ShowMDS"
+        component={ShowOffMDSPage}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

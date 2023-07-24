@@ -11,6 +11,7 @@ export type RootStackParamList = {
   Authentication: undefined;
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   NotFound: undefined;
+  ShowMDS: undefined;
 };
 
 export type RootTabParamList = {
