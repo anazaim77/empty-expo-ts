@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import { reactQueryClient } from "../services/QueryClient";
 import { RootStackParamList, RootTabParamList } from "./types";
 import { addPlugin } from "react-query-native-devtools";
+import { View } from "@flip.id/mobile-design-system";
 
 export default function Navigation() {
   useEffect(() => {
@@ -35,28 +36,32 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Authentication"
-        component={LoginPage}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Root"
-        component={BottomTabNavigator}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="NotFound"
-        component={NotFoundPage}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="ShowMDS"
-        component={ShowOffMDSPage}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
+    <View flex={1} alignItems="center">
+      <View flex={1} w={"100%"} maxW={414}>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Authentication"
+            component={LoginPage}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Root"
+            component={BottomTabNavigator}
+            options={{ headerShown: true }}
+          />
+          <Stack.Screen
+            name="NotFound"
+            component={NotFoundPage}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ShowMDS"
+            component={ShowOffMDSPage}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </View>
+    </View>
   );
 }
 
